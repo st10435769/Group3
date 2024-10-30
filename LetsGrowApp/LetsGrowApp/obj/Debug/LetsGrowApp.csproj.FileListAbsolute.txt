@@ -1,0 +1,32 @@
+C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.csproj.AssemblyReference.cache
+C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.LoginForm.resources
+C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.MainForm.resources
+C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.OrganizationManagementForm.resources
+C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.Properties.Resources.resources
+C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.csproj.GenerateResource.cache
+C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.csproj.CoreCompileInputs.cache
+C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\bin\Debug\LetsGrowApp.exe.config
+C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\bin\Debug\LetsGrowApp.exe
+C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\bin\Debug\LetsGrowApp.pdb
+C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.exe
+C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.pdb
+C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.DonationsManagementForm.resources
+C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.FarmProductsManagementForm.resources
+C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.ForgotPasswordForm.resources
+C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.RegistrationForm.resources
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\bin\Debug\LetsGrowApp.exe.config
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\bin\Debug\LetsGrowApp.exe
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\bin\Debug\LetsGrowApp.pdb
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.DonationsManagementForm.resources
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.FarmProductsManagementForm.resources
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.ForgotPasswordForm.resources
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.LoginForm.resources
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.MainForm.resources
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.OrganizationManagementForm.resources
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.Properties.Resources.resources
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.RegistrationForm.resources
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.csproj.GenerateResource.cache
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.csproj.CoreCompileInputs.cache
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.exe
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.pdb
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.csproj.AssemblyReference.cache
