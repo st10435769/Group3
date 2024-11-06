@@ -16,7 +16,7 @@ namespace LetsGrowApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RegistrationForm()); // Make sure Form1 exists or replace with the correct form name
+            Application.Run(new WelcomeForm()); // Make sure Form1 exists or replace with the correct form name
         }
     }
 }

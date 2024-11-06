@@ -18,45 +18,68 @@ namespace LetsGrowApp
             InitializeComponent();
         }
 
+        private string connectionString = "Server=tcp:khulanathidb.database.windows.net,1433;Initial Catalog=KhulaNathiDb;Persist Security Info=False;User ID=khulanathiAdmin;Password=Khulanath!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
+            string username = txtUsername.Text.Trim();
+            string password = txtPassword.Text.Trim();
 
-            using (SqlConnection conn = new SqlConnection("Server=tcp:assigning.database.windows.net,1433;Initial Catalog=Ndivhuwo;Persist Security Info=False;User ID=admin1;Password=Ndibs@1305;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                string query = "SELECT COUNT(*) FROM Users WHERE Username = @Username AND Password = @Password";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@Username", username);
-                cmd.Parameters.AddWithValue("@Password", password);
-                conn.Open();
+                MessageBox.Show("Username and password cannot be empty.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-                int count = (int)cmd.ExecuteScalar();
-                if (count > 0)
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    MainForm mainForm = new MainForm();
-                    mainForm.Show();
-                    this.Hide(); // Hide the login form
-                }
-                else
-                {
-                    MessageBox.Show("Invalid username or password.");
+                    string query = "SELECT COUNT(*) FROM Users WHERE Username = @Username AND Password = @Password";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Username", username);
+                        cmd.Parameters.AddWithValue("@Password", password);
+
+                        conn.Open();
+                        int count = (int)cmd.ExecuteScalar();
+
+                        if (count > 0)
+                        {
+                            MainForm mainForm = new MainForm();
+                            mainForm.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
                 }
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("An error occurred while trying to log in. Please check your database connection.\nError: " + ex.Message,
+                                "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An unexpected error occurred.\nError: " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnBackW_Click(object sender, EventArgs e)
+        {
+            WelcomeForm welcomeForm = WelcomeForm.GetInstance();
+            welcomeForm.Show();
+            this.Close();
         }
 
         private void linkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ForgotPasswordForm forgotPasswordForm = new ForgotPasswordForm();
-            forgotPasswordForm.ShowDialog(); // Show the forgot password form as a dialog
+            forgotPasswordForm.ShowDialog();
         }
-
-        private void lblRegister_Click(object sender, EventArgs e)
-        {
-            RegistrationForm regForm = new RegistrationForm();
-            regForm.Show();
-            this.Hide(); // Hide the login form
-        }
-
     }
 }

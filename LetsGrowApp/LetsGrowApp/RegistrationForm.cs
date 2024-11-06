@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -16,53 +17,73 @@ namespace LetsGrowApp
         public RegistrationForm()
         {
             InitializeComponent();
+            this.btnBack.Click += new System.EventHandler(this.btnBackW_Click);
         }
 
+        private void btnBackW_Click(object sender, EventArgs e)
+        {
+            WelcomeForm welcomeForm = WelcomeForm.GetInstance();
+            welcomeForm.Show();
+            this.Close();
+        }
+
+        private string connectionString = "Server=tcp:khulanathidb.database.windows.net,1433;Initial Catalog=KhulaNathiDb;Persist Security Info=False;User ID=khulanathiAdmin;Password=Khulanath!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
 
-            using (SqlConnection conn = new SqlConnection("Server=tcp:st10435769db1.database.windows.net,1433;Initial Catalog=Group3;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Authentication=Active Directory Default;"))
+            string username = txtUsername.Text.Trim();
+            string password = txtPassword.Text.Trim();
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                conn.Open();
-                string checkQuery = "SELECT COUNT(*) FROM Users WHERE Username = @Username";
-                using (SqlCommand checkCommand = new SqlCommand(checkQuery, conn))
-                {
-                    checkCommand.Parameters.AddWithValue("@Username", username);
-                    int userExists = (int)checkCommand.ExecuteScalar();
+                MessageBox.Show("Username and password cannot be empty.", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-                    if (userExists > 0)
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string checkQuery = "SELECT COUNT(*) FROM Users WHERE Username = @Username";
+                    using (SqlCommand checkCommand = new SqlCommand(checkQuery, conn))
                     {
-                        MessageBox.Show("Username already exists. Please choose a different username.");
-                        return;
+                        checkCommand.Parameters.AddWithValue("@Username", username);
+                        int userExists = (int)checkCommand.ExecuteScalar();
+
+                        if (userExists > 0)
+                        {
+                            MessageBox.Show("Username already exists. Please choose a different username.", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    string query = "INSERT INTO Users (Username, Password) VALUES (@Username, @Password)";
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        command.Parameters.AddWithValue("@Username", username);
+                        command.Parameters.AddWithValue("@Password", password);
+                        command.ExecuteNonQuery();
                     }
                 }
 
-                // Insert new user
-                string query = "INSERT INTO Users (Username, Password) VALUES (@Username, @Password)";
-                using (SqlCommand command = new SqlCommand(query, conn))
-                {
-                    command.Parameters.AddWithValue("@Username", username);
-                    command.Parameters.AddWithValue("@Password", password); // Consider hashing passwords for security
-                    command.ExecuteNonQuery();
-                }
+                MessageBox.Show("Registration successful! You can now log in.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            MessageBox.Show("Registration successful! You can now log in.");
-
-            // Navigate to Login Form after successful registration
-            this.Hide(); // Hide the registration form
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show(); // Show the login form
-        }
-        private void btnLogin_Click(object sender, EventArgs e) 
+            catch (SqlException ex)
             {
-            MainForm main = new MainForm();
-            main.Show();    
-            this.Hide();
+                MessageBox.Show("An error occurred while connecting to the database. Please try again later.\nError: " + ex.Message,
+                                "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An unexpected error occurred.\nError: " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
+            this.Hide();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
         }
     }
+}

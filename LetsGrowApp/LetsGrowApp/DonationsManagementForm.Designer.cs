@@ -17,9 +17,11 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblDonorID;
         private System.Windows.Forms.Label lblOrganizationID;
+        private System.Windows.Forms.Button btnBack;
 
         private void InitializeComponent()
         {
+            this.btnBack = new System.Windows.Forms.Button();
             this.btnAddDonation = new System.Windows.Forms.Button();
             this.btnEditDonation = new System.Windows.Forms.Button();
             this.btnDeleteDonation = new System.Windows.Forms.Button();
@@ -37,142 +39,147 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonations)).BeginInit();
             this.SuspendLayout();
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(12, 367);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(118, 41);
+            this.btnBack.TabIndex = 0;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // btnAddDonation
             // 
-            this.btnAddDonation.Location = new System.Drawing.Point(12, 350);
+            this.btnAddDonation.Location = new System.Drawing.Point(300, 240);
             this.btnAddDonation.Name = "btnAddDonation";
-            this.btnAddDonation.Size = new System.Drawing.Size(75, 23);
-            this.btnAddDonation.TabIndex = 0;
-            this.btnAddDonation.Text = "Add";
+            this.btnAddDonation.Size = new System.Drawing.Size(100, 30);
+            this.btnAddDonation.TabIndex = 10;
+            this.btnAddDonation.Text = "Add Donation";
             this.btnAddDonation.UseVisualStyleBackColor = true;
             this.btnAddDonation.Click += new System.EventHandler(this.btnAddDonation_Click);
             // 
             // btnEditDonation
             // 
-            this.btnEditDonation.Location = new System.Drawing.Point(110, 350);
+            this.btnEditDonation.Location = new System.Drawing.Point(300, 280);
             this.btnEditDonation.Name = "btnEditDonation";
-            this.btnEditDonation.Size = new System.Drawing.Size(75, 23);
-            this.btnEditDonation.TabIndex = 1;
-            this.btnEditDonation.Text = "Edit";
+            this.btnEditDonation.Size = new System.Drawing.Size(100, 30);
+            this.btnEditDonation.TabIndex = 11;
+            this.btnEditDonation.Text = "Edit Donation";
             this.btnEditDonation.UseVisualStyleBackColor = true;
             this.btnEditDonation.Click += new System.EventHandler(this.btnEditDonation_Click);
             // 
             // btnDeleteDonation
             // 
-            this.btnDeleteDonation.Location = new System.Drawing.Point(210, 350);
+            this.btnDeleteDonation.Location = new System.Drawing.Point(300, 320);
             this.btnDeleteDonation.Name = "btnDeleteDonation";
-            this.btnDeleteDonation.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteDonation.TabIndex = 2;
-            this.btnDeleteDonation.Text = "Delete";
+            this.btnDeleteDonation.Size = new System.Drawing.Size(100, 30);
+            this.btnDeleteDonation.TabIndex = 12;
+            this.btnDeleteDonation.Text = "Delete Donation";
             this.btnDeleteDonation.UseVisualStyleBackColor = true;
             this.btnDeleteDonation.Click += new System.EventHandler(this.btnDeleteDonation_Click);
             // 
             // dgvDonations
             // 
             this.dgvDonations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDonations.Location = new System.Drawing.Point(12, 12);
+            this.dgvDonations.Location = new System.Drawing.Point(12, 50);
             this.dgvDonations.Name = "dgvDonations";
-            this.dgvDonations.Size = new System.Drawing.Size(500, 150);
-            this.dgvDonations.TabIndex = 3;
+            this.dgvDonations.RowHeadersWidth = 51;
+            this.dgvDonations.Size = new System.Drawing.Size(560, 150);
+            this.dgvDonations.TabIndex = 1;
             this.dgvDonations.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDonations_CellClick);
             // 
             // txtDonationID
             // 
-            this.txtDonationID.Location = new System.Drawing.Point(90, 180);
+            this.txtDonationID.Location = new System.Drawing.Point(120, 210);
             this.txtDonationID.Name = "txtDonationID";
-            this.txtDonationID.Size = new System.Drawing.Size(100, 20);
-            this.txtDonationID.TabIndex = 4;
+            this.txtDonationID.Size = new System.Drawing.Size(150, 22);
+            this.txtDonationID.TabIndex = 0;
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(90, 210);
+            this.txtAmount.Location = new System.Drawing.Point(120, 240);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(100, 20);
-            this.txtAmount.TabIndex = 5;
+            this.txtAmount.Size = new System.Drawing.Size(150, 22);
+            this.txtAmount.TabIndex = 14;
             // 
             // dtpDate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(90, 240);
+            this.dtpDate.Location = new System.Drawing.Point(120, 270);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpDate.TabIndex = 6;
+            this.dtpDate.Size = new System.Drawing.Size(150, 22);
+            this.dtpDate.TabIndex = 16;
             // 
             // txtDonorID
             // 
-            this.txtDonorID.Location = new System.Drawing.Point(90, 270);
+            this.txtDonorID.Location = new System.Drawing.Point(120, 300);
             this.txtDonorID.Name = "txtDonorID";
-            this.txtDonorID.Size = new System.Drawing.Size(100, 20);
-            this.txtDonorID.TabIndex = 7;
+            this.txtDonorID.Size = new System.Drawing.Size(150, 22);
+            this.txtDonorID.TabIndex = 18;
             // 
             // txtOrganizationID
             // 
-            this.txtOrganizationID.Location = new System.Drawing.Point(90, 300);
+            this.txtOrganizationID.Location = new System.Drawing.Point(120, 330);
             this.txtOrganizationID.Name = "txtOrganizationID";
-            this.txtOrganizationID.Size = new System.Drawing.Size(100, 20);
-            this.txtOrganizationID.TabIndex = 8;
+            this.txtOrganizationID.Size = new System.Drawing.Size(150, 22);
+            this.txtOrganizationID.TabIndex = 20;
             // 
             // lblDonationID
             // 
-            this.lblDonationID.AutoSize = true;
-            this.lblDonationID.Location = new System.Drawing.Point(10, 180);
+            this.lblDonationID.Location = new System.Drawing.Point(20, 210);
             this.lblDonationID.Name = "lblDonationID";
-            this.lblDonationID.Size = new System.Drawing.Size(64, 13);
-            this.lblDonationID.TabIndex = 9;
-            this.lblDonationID.Text = "Donation ID";
+            this.lblDonationID.Size = new System.Drawing.Size(80, 20);
+            this.lblDonationID.TabIndex = 0;
+            this.lblDonationID.Text = "Donation ID:";
             // 
             // lblAmount
             // 
-            this.lblAmount.AutoSize = true;
-            this.lblAmount.Location = new System.Drawing.Point(10, 210);
+            this.lblAmount.Location = new System.Drawing.Point(20, 240);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(43, 13);
-            this.lblAmount.TabIndex = 10;
-            this.lblAmount.Text = "Amount";
+            this.lblAmount.Size = new System.Drawing.Size(80, 20);
+            this.lblAmount.TabIndex = 13;
+            this.lblAmount.Text = "Amount:";
             // 
             // lblDate
             // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(10, 240);
+            this.lblDate.Location = new System.Drawing.Point(20, 270);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(30, 13);
-            this.lblDate.TabIndex = 11;
-            this.lblDate.Text = "Date";
+            this.lblDate.Size = new System.Drawing.Size(80, 20);
+            this.lblDate.TabIndex = 15;
+            this.lblDate.Text = "Date:";
             // 
             // lblDonorID
             // 
-            this.lblDonorID.AutoSize = true;
-            this.lblDonorID.Location = new System.Drawing.Point(10, 270);
+            this.lblDonorID.Location = new System.Drawing.Point(20, 300);
             this.lblDonorID.Name = "lblDonorID";
-            this.lblDonorID.Size = new System.Drawing.Size(50, 13);
-            this.lblDonorID.TabIndex = 12;
-            this.lblDonorID.Text = "Donor ID";
+            this.lblDonorID.Size = new System.Drawing.Size(80, 20);
+            this.lblDonorID.TabIndex = 17;
+            this.lblDonorID.Text = "Donor ID:";
             // 
             // lblOrganizationID
             // 
-            this.lblOrganizationID.AutoSize = true;
-            this.lblOrganizationID.Location = new System.Drawing.Point(10, 300);
+            this.lblOrganizationID.Location = new System.Drawing.Point(20, 330);
             this.lblOrganizationID.Name = "lblOrganizationID";
-            this.lblOrganizationID.Size = new System.Drawing.Size(80, 13);
-            this.lblOrganizationID.TabIndex = 13;
-            this.lblOrganizationID.Text = "Organization ID";
+            this.lblOrganizationID.Size = new System.Drawing.Size(100, 20);
+            this.lblOrganizationID.TabIndex = 19;
+            this.lblOrganizationID.Text = "Organization ID:";
             // 
             // DonationsManagementForm
             // 
-            this.ClientSize = new System.Drawing.Size(639, 484);
-            this.Controls.Add(this.lblOrganizationID);
-            this.Controls.Add(this.lblDonorID);
-            this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.lblAmount);
-            this.Controls.Add(this.lblDonationID);
-            this.Controls.Add(this.txtOrganizationID);
-            this.Controls.Add(this.txtDonorID);
-            this.Controls.Add(this.dtpDate);
-            this.Controls.Add(this.txtAmount);
-            this.Controls.Add(this.txtDonationID);
-            this.Controls.Add(this.dgvDonations);
-            this.Controls.Add(this.btnDeleteDonation);
-            this.Controls.Add(this.btnEditDonation);
+            this.ClientSize = new System.Drawing.Size(600, 420);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAddDonation);
+            this.Controls.Add(this.btnEditDonation);
+            this.Controls.Add(this.btnDeleteDonation);
+            this.Controls.Add(this.dgvDonations);
+            this.Controls.Add(this.lblAmount);
+            this.Controls.Add(this.txtAmount);
+            this.Controls.Add(this.lblDate);
+            this.Controls.Add(this.dtpDate);
+            this.Controls.Add(this.lblDonorID);
+            this.Controls.Add(this.txtDonorID);
+            this.Controls.Add(this.lblOrganizationID);
+            this.Controls.Add(this.txtOrganizationID);
             this.Name = "DonationsManagementForm";
             this.Text = "Manage Donations";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonations)).EndInit();
@@ -180,5 +187,6 @@
             this.PerformLayout();
 
         }
+
     }
 }

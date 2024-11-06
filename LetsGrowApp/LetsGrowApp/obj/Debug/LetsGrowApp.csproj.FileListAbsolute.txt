@@ -14,9 +14,9 @@ C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowA
 C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.FarmProductsManagementForm.resources
 C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.ForgotPasswordForm.resources
 C:\Users\RC_Student_lab\source\repos\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.RegistrationForm.resources
-C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\bin\Debug\LetsGrowApp.exe.config
 C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\bin\Debug\LetsGrowApp.exe
-C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\bin\Debug\LetsGrowApp.pdb
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\bin\Debug\LetsGrowApp.exe.config
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.csproj.AssemblyReference.cache
 C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.DonationsManagementForm.resources
 C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.FarmProductsManagementForm.resources
 C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.ForgotPasswordForm.resources
@@ -29,4 +29,8 @@ C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGr
 C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.csproj.CoreCompileInputs.cache
 C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.exe
 C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.pdb
-C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.csproj.AssemblyReference.cache
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\bin\Debug\LetsGrowApp.pdb
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.WelcomeForm.resources
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrow.0129DEE9.Up2Date
+C:\Users\User\Downloads\LetsGrowApp (2)\LetsGrowApp\LetsGrowApp\obj\Debug\LetsGrowApp.DonorManagementForm.resources

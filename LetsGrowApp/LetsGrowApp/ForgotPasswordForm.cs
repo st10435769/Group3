@@ -18,32 +18,60 @@ namespace LetsGrowApp
             InitializeComponent();
         }
 
+        private string connectionString = "Server=tcp:khulanathidb.database.windows.net,1433;Initial Catalog=KhulaNathiDb;Persist Security Info=False;User ID=khulanathiAdmin;Password=Khulanath!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
-            string newPassword = txtNewPassword.Text;
+            string password = txtNewPassword.Text.Trim();
 
-            using (SqlConnection conn = new SqlConnection("Server=tcp:assigning.database.windows.net,1433;Initial Catalog=Ndivhuwo;Persist Security Info=False;User ID=admin1;Password=Ndibs@1305;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                string query = "UPDATE Users SET Password = @Password WHERE Username = @Username";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@Username", username);
-                cmd.Parameters.AddWithValue("@Password", newPassword);
+                MessageBox.Show("Username and password cannot be empty.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-                conn.Open();
-                int rowsAffected = cmd.ExecuteNonQuery();
-                if (rowsAffected > 0)
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    MessageBox.Show("Password updated successfully!");
-                    this.Close(); // Close the form after updating
-                }
-                else
-                {
-                    MessageBox.Show("Username not found.");
+                    string query = "UPDATE Users SET Password = @Password WHERE Username = @Username";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Username", username);
+                        cmd.Parameters.AddWithValue("@Password", password);
+
+                        conn.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Password updated successfully!");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Username not found.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
                 }
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("An error occurred while updating the password. Please try again later.\nError: " + ex.Message,
+                                "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An unexpected error occurred.\nError: " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnBackW_Click(object sender, EventArgs e)
+        {
+            WelcomeForm welcomeForm = WelcomeForm.GetInstance();
+            welcomeForm.Show();
+            this.Close();
         }
     }
-
 }
 
